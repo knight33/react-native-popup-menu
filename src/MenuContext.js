@@ -156,6 +156,9 @@ export default class MenuContext extends Component {
         return
       }
       this._placeholderRef.setState({ openedMenu: this.openedMenu }, afterSetState);
+      if(afterSetState){
+         afterSetState();
+      }
       debug('notify ended');
     });
   }
