@@ -80,7 +80,7 @@ export default class Menu extends Component {
       if (isTrigger(child)) {
         r.push(React.cloneElement(child, {
           key: null,
-          menuName: this._name,
+          name: this._name,
           onRef: (t => this._trigger = t)
         }));
       }
