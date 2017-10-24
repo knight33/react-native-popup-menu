@@ -21,7 +21,7 @@ export default class Menu extends Component {
 
   constructor(props, ctx) {
     super(props, ctx);
-    this._name = this.props.name || makeName();
+    this._name = this.props.menuName || makeName();
     this._forceClose = false;
     if(!(ctx && ctx.menuActions)) {
       throw new Error("Menu component must be ancestor of MenuContext");
@@ -80,7 +80,7 @@ export default class Menu extends Component {
       if (isTrigger(child)) {
         r.push(React.cloneElement(child, {
           key: null,
-          name: this._name,
+          menuName: this._name,
           onRef: (t => this._trigger = t)
         }));
       }
