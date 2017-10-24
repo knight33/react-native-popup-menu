@@ -9,11 +9,11 @@ export default class MenuTrigger extends Component {
   _onPress() {
     debug('trigger onPress');
     this.props.onPress && this.props.onPress();
-    this.context.menuActions.openMenu(this.props.name);
+    this.context.menuActions.openMenu(this.props.menuName);
   }
 
   render() {
-    const { disabled, onRef, text, children, style, customStyles, ...other } = this.props;
+    const { disabled, onRef, text, children, style, customStyles, menuName, ...other } = this.props;
     const onPress = () => !disabled && this._onPress();
     const { Touchable, defaultTouchableProps } = makeTouchable(customStyles.TriggerTouchableComponent);
     return (
