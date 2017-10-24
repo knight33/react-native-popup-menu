@@ -21,7 +21,7 @@ export default class Menu extends Component {
 
   constructor(props, ctx) {
     super(props, ctx);
-    this._name = this.props.menuName || makeName();
+    this._name = this.props.name || makeName();
     this._forceClose = false;
     if(!(ctx && ctx.menuActions)) {
       throw new Error("Menu component must be ancestor of MenuContext");
